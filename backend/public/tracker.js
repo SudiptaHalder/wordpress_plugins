@@ -1,28 +1,35 @@
 (function () {
-  if (window.location.pathname.includes("wp-admin")) return;
-
-  const SITE_ID = window._wpAnalyticsSiteId;
-  if (!SITE_ID) return;
+  const backendUrl = "https://meritless-charise-pseudodiphtheric.ngrok-free.dev";
 
   function getDeviceType() {
     const ua = navigator.userAgent;
-    if (/Mobi|Android/i.test(ua)) return "Mobile";
-    if (/iPad|Tablet/i.test(ua)) return "Tablet";
+    if (/mobile/i.test(ua)) return "Mobile";
+    if (/tablet/i.test(ua)) return "Tablet";
     return "Desktop";
   }
 
-  const payload = {
-    site_id: SITE_ID,
-    url: window.location.pathname + window.location.search,
-    referrer: document.referrer || "",
-    device: getDeviceType(),
-    browser: navigator.userAgent,
-    ip: ""
-  };
+  async function trackEvent() {
+    const payload = {
+      site_id: window._wpAnalyticsSiteId || "test-site-123",
+      url: window.location.href,
+      referrer: document.referrer || "",
+      device: getDeviceType(),
+      browser: navigator.userAgent,
+      ip: "", 
+    };
 
-  fetch("http://localhost:5000/api/track", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(payload),
-  }).catch(() => {});
+    try {
+      await fetch(`${backendUrl}/api/track`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      console.log("Tracked:", payload);
+    } catch (e) {
+      console.error("Track error:", e);
+    }
+  }
+
+  trackEvent();
 })();

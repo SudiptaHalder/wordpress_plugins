@@ -5,7 +5,6 @@ import Sidebar from './components/Dashboard/Sidebar.jsx';
 import Loading from './components/UI/Loading.jsx';
 import OverviewTab from './components/Tabs/OverviewTab.jsx';
 import TrafficTab from './components/Tabs/TrafficTab.jsx';
-import PerformanceTab from './components/Tabs/PerformanceTab.jsx';
 import SeoTab from './components/Tabs/SeoTab.jsx';
 import RealTimeTab from './components/Tabs/RealTimeTab.jsx';
 import './styles.css';
@@ -26,8 +25,7 @@ function App() {
         return <OverviewTab data={data} />;
       case 'traffic':
         return <TrafficTab data={data} />;
-      case 'performance':
-        return <PerformanceTab data={data} />;
+    
       case 'seo':
         return <SeoTab data={data} />;
       case 'realtime':
