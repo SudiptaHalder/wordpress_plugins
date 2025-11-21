@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Analytics Dashboard</title>
+    <style>
+      /* Prevent flash of unstyled content */
+      body { 
+        margin: 0; 
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+        background: #f8fafc;
+        color: #334155;
+      }
+      #root { 
+        min-height: 100vh;
+      }
+      .loading-initial {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        font-size: 18px;
+        color: #64748b;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root">
+      <div class="loading-initial">Loading Analytics Dashboard...</div>
+    </div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

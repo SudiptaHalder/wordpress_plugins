@@ -1,0 +1,60 @@
+import React from 'react';
+import './Header.css';
+
+
+const Header = ({ timeRange, onTimeRangeChange, onMenuToggle, sidebarOpen }) => {
+  return (
+    <header className="modern-header">
+      <div className="header-left">
+        <button className="menu-toggle-btn" onClick={onMenuToggle}>
+          <span className="menu-icon">☰</span>
+        </button>
+        <div className="header-breadcrumb">
+          <span className="breadcrumb-text">Dashboard</span>
+          <span className="breadcrumb-separator">/</span>
+          <span className="breadcrumb-active">Analytics</span>
+        </div>
+      </div>
+
+      <div className="header-center">
+        <div className="time-display">
+          <span className="time-text">Last 7 days</span>
+        </div>
+      </div>
+
+      <div className="header-right">
+        <div className="header-actions">
+          <div className="action-group">
+            <button className="action-btn notification-btn">
+              <span className="btn-icon">🔔</span>
+              <span className="notification-badge">3</span>
+            </button>
+            
+            <button className="action-btn message-btn">
+              <span className="btn-icon">💬</span>
+              <span className="message-badge">7</span>
+            </button>
+          </div>
+
+          <select 
+            value={timeRange} 
+            onChange={(e) => onTimeRangeChange(e.target.value)}
+            className="time-select"
+          >
+            <option value="24h">Last 24 Hours</option>
+            <option value="7d">Last 7 Days</option>
+            <option value="30d">Last 30 Days</option>
+            <option value="90d">Last 90 Days</option>
+          </select>
+          
+          <button className="export-btn">
+            <span className="export-icon">📊</span>
+            Export Report
+          </button>
+        </div>
+      </div>
+    </header>
+  );
+};
+
+export default Header;
