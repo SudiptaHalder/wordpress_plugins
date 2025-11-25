@@ -22,7 +22,6 @@
   color: #718096;
 }
 
-/* Main Stats Grid */
 .main-stats-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -105,7 +104,6 @@
   font-weight: 500;
 }
 
-/* Charts and Metrics Row */
 .charts-metrics-row {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
@@ -163,7 +161,6 @@
   color: white;
 }
 
-/* Traffic Chart */
 .traffic-chart {
   height: 200px;
   display: flex;
@@ -285,14 +282,12 @@
   background: linear-gradient(to right, #82ca9d, #38a169);
 }
 
-/* Middle Column */
 .middle-column {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
-/* Performance Metrics */
 .metrics-list {
   display: flex;
   flex-direction: column;
@@ -350,7 +345,6 @@
   color: #718096;
 }
 
-/* Quick Stats */
 .quick-stats-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -377,14 +371,12 @@
   font-weight: 500;
 }
 
-/* Right Column */
 .right-column {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
-/* Activities Section */
 .live-badge {
   display: flex;
   align-items: center;
@@ -456,7 +448,6 @@
   color: #718096;
 }
 
-/* Sources Section */
 .sources-list {
   display: flex;
   flex-direction: column;
@@ -496,7 +487,6 @@
   color: #2d3748;
 }
 
-/* Bottom Metrics Row */
 .bottom-metrics-row {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -568,7 +558,6 @@
   text-align: center;
 }
 
-/* Responsive Overview */
 @media (max-width: 1200px) {
   .charts-metrics-row {
     grid-template-columns: 1fr;

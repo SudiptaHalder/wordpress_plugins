@@ -1,5 +1,4 @@
-/* Header Styles */
-.modern-header {
+/* .modern-header {
   height: 70px;
   background: white;
   border-bottom: 1px solid #e2e8f0;
@@ -177,7 +176,6 @@
   font-size: 16px;
 }
 
-/* Responsive Header */
 @media (max-width: 768px) {
   .header-right {
     display: none;
@@ -185,5 +183,172 @@
   
   .modern-header {
     padding: 0 16px;
+  }
+} */
+ /* DARK MODE HEADER */
+/* ================================
+   SOFT UI HEADER (LIGHT THEME)
+   ================================ */
+
+.soft-header {
+  height: 70px;
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  border-radius: 0 0 14px 14px;
+  box-shadow: 0 3px 20px rgba(0, 0, 0, 0.06);
+  position: sticky;
+  top: 0;
+  z-index: 200;
+}
+
+/* LEFT */
+.soft-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.soft-menu-btn {
+  width: 40px;
+  height: 40px;
+  background: #f3f4f6;
+  border: none;
+  border-radius: 10px;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  transition: 0.3s ease;
+}
+
+.soft-menu-btn:hover {
+  background: #e5e7eb;
+}
+
+.soft-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 15px;
+  color: #6b7280;
+}
+
+.soft-breadcrumb .active {
+  font-weight: 600;
+  color: #111827;
+}
+
+.soft-separator {
+  color: #d1d5db;
+}
+
+/* CENTER */
+.soft-center {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.soft-timerange-box {
+  padding: 8px 16px;
+  background: #f3f4f6;
+  border-radius: 12px;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.06);
+  color: #374151;
+  font-weight: 500;
+}
+
+/* RIGHT */
+.soft-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.soft-icon-group {
+  display: flex;
+  gap: 10px;
+}
+
+.soft-icon-btn {
+  width: 40px;
+  height: 40px;
+  background: #f3f4f6;
+  border: none;
+  border-radius: 10px;
+  position: relative;
+  cursor: pointer;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+
+.soft-icon-btn:hover {
+  background: #e5e7eb;
+}
+
+.soft-badge {
+  position: absolute;
+  top: -3px;
+  right: -3px;
+  background: #ef4444;
+  color: white;
+  font-size: 10px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* SELECT */
+.soft-select {
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  height: 40px;
+  padding: 6px 12px;
+  color: #374151;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+}
+
+/* EXPORT BTN */
+.soft-export-btn {
+  height: 40px;
+  padding: 8px 16px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(90deg, #6d83f3, #8b5cf6);
+  color: white;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 3px 8px rgba(109,131,243,0.3);
+  transition: 0.2s;
+}
+
+.soft-export-btn:hover {
+  opacity: 0.95;
+  transform: translateY(-1px);
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .soft-right {
+    display: none;
+  }
+
+  .soft-header {
+    padding: 0 12px;
   }
 }

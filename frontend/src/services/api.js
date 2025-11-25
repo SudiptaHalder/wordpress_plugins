@@ -1,20 +1,17 @@
-const BASE_URL = "http://localhost:5000"; 
-// if using ngrok for backend use: "https://xxxxx.ngrok-free.dev"
+// FRONTEND DASHBOARD API CLIENT
+const BASE_URL = "https://api.pikuanalytics.site";
 
 async function request(endpoint) {
   const url = `${BASE_URL}${endpoint}`;
-
   console.log("FETCHING:", url);
 
   try {
-    const response = await fetch(url);
+    const res = await fetch(url, {
+      headers: { "Content-Type": "application/json" },
+    });
 
-    if (!response.ok) {
-      throw new Error(`HTTP ${response.status} - ${response.statusText}`);
-    }
-
-    return response.json();
-
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    return res.json();
   } catch (err) {
     console.error("API ERROR:", err);
     throw err;
@@ -22,11 +19,11 @@ async function request(endpoint) {
 }
 
 export const analyticsAPI = {
-  getOverview: (siteId, start, end) =>
-    request(`/api/overview?site_id=${siteId}&start_date=${start}&end_date=${end}`),
+  getOverview: (siteId) =>
+    request(`/api/overview?site_id=${siteId}`),
 
-  getTraffic: (siteId, start, end) =>
-    request(`/api/traffic?site_id=${siteId}&start_date=${start}&end_date=${end}`),
+  getTraffic: (siteId) =>
+    request(`/api/traffic?site_id=${siteId}`),
 
   getActiveUsers: (siteId) =>
     request(`/api/realtime/active?site_id=${siteId}`),
